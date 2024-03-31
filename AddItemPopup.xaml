@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mct:Popup
+    x:Class="PlantMonitor.AddItemPopup"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:mct="clr-namespace:CommunityToolkit.Maui.Views;assembly=CommunityToolkit.Maui"
+    CanBeDismissedByTappingOutsideOfPopup="True">
+    <Grid
+        BackgroundColor="WhiteSmoke"
+        ColumnDefinitions="Auto,Auto"
+        RowDefinitions="Auto, Auto, Auto,Auto"
+        WidthRequest="500">
+        <Label
+            Grid.Row="0"
+            Grid.ColumnSpan="3"
+            HorizontalOptions="Center"
+            Text="New Plant"
+            VerticalOptions="Center" />
+        <Entry Grid.Row="1" Placeholder="Plant name" />
+        <Label
+            Grid.Row="2"
+            Grid.Column="0"
+            Padding="20"
+            Text="Water the plant every:" />
+        <Entry Grid.Row="2" Grid.Column="1" />
+        <Label
+            Grid.Row="2"
+            Grid.Column="2"
+            Padding="20"
+            Text="days" />
+    </Grid>
+</mct:Popup>

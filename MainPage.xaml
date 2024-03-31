@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PlantMonitor.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viemodel="clr-namespace:PlantMonitor.ViewModel"
+    x:DataType="viemodel:MainViewModel">
+
+    <Grid
+        Padding="0"
+        BackgroundColor="#818c3c"
+        ColumnDefinitions=".6*,.6*,.6*,.6*,.6*,.6*,.6*,.6*,.6*,.6*,.6*,.6*,.6*,.6*,.6*"
+        RowDefinitions="140,Auto,Auto,100">
+
+        <Frame
+            Grid.Column="0"
+            Grid.ColumnSpan="10"
+            Padding="20"
+            BackgroundColor="#25591f">
+            <Image BackgroundColor="AliceBlue" Source="dotnet_bot.png" />
+        </Frame>
+        <Image
+            Grid.Column="10"
+            Grid.ColumnSpan="5"
+            BackgroundColor="#25591f"
+            Source="dotnet_bot.png" />
+        <Button
+            Grid.Row="1"
+            Grid.Column="11"
+            BackgroundColor="#72601b"
+            FontSize="Micro" />
+        <Button
+            Grid.Row="1"
+            Grid.Column="13"
+            BackgroundColor="#72601b"
+            FontSize="1"
+            Text="+" 
+            Clicked="AddButtonClicked"/>
+        <CollectionView Grid.Row="2" Grid.ColumnSpan="15">
+            <CollectionView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Hoya</x:String>
+                    <x:String>Cactus</x:String>
+                    <x:String>Citrus</x:String>
+                </x:Array>
+            </CollectionView.ItemsSource>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid
+                        Padding="10,5"
+                        ColumnDefinitions=".16*,.16*,.16*,.16*,.16*,.16*"
+                        RowDefinitions=".50*,.50*"
+                        RowSpacing="0">
+                        <Frame
+                            Grid.RowSpan="2"
+                            Grid.ColumnSpan="2"
+                            Padding="0"
+                            MaximumWidthRequest="200">
+                            <Image BackgroundColor="#72601b" Source="dotnet_bot.png" />
+                        </Frame>
+                        <Frame
+                            Grid.Column="2"
+                            Grid.ColumnSpan="4"
+                            Padding="10">
+                            <Label FontSize="12" Text="{Binding .}" />
+                        </Frame>
+                        <Frame
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            Grid.ColumnSpan="4" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+
+</ContentPage>
